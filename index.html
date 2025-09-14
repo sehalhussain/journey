@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sehal Hussain | Content Creator & AI Automation Specialist</title>
+    <meta name="description" content="Sehal Hussain is a Content Creator, Motion Designer, and AI Automation Specialist. Helping brands and individuals create impactful content, streamline workflows, and grow faster with creativity + AI.">
+    <meta name="keywords" content="Sehal Hussain, Content Creator, Motion Design, AI Automation, Video Production, No-code, Branding, AI Workflows, Creative Automation">
+     <meta name="author" content="Sehal Hussain">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 1.5rem; /* Adjusted padding for better mobile spacing */
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
+            letter-spacing: -0.025em;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+        /* Animation for the hero text */
+        .animated-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInScale 1.5s forwards ease-out;
+        }
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Modal styles */
+        .story-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .story-modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .story-modal-content {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(16, 185, 129, 0.6);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            max-width: 600px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+        }
+        .story-modal-overlay.open .story-modal-content {
+            transform: scale(1);
+        }
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: #6b7280;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .close-button:hover {
+            color: #1a1a1a;
+        }
+        /* New styles for scroll animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Responsive padding for sections */
+        section {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        @media (min-width: 640px) {
+            section {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+        }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header & Hero Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container py-4 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <h1 class="text-2xl font-bold text-gray-900 tracking-tight">Sehal Hussain</h1>
+            <nav class="mt-2 sm:mt-0">
+                <ul class="flex space-x-4 sm:space-x-6 text-gray-600 font-medium">
+                    <li><a href="#services" class="hover:text-green-600 transition-colors">Services</a></li>
+                    <li><a href="#clients" class="hover:text-green-600 transition-colors">Clients</a></li>
+                    <li><a href="#testimonials" class="hover:text-green-600 transition-colors">Recommendations</a></li>
+                    <li><a href="#contact" class="hover:text-green-600 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container min-h-screen flex flex-col justify-center items-center py-16 text-center">
+            <div class="w-full max-w-4xl p-8 rounded-3xl">
+                <div class="flex flex-col items-center justify-center">
+                    <h2 class="animated-text text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tighter">Hello, I'm <span class="text-green-600">Sehal Hussain</span></h2>
+                    <p class="text-xl text-gray-700 mt-4 font-medium max-w-2xl">Content Creator, Sr. Motion Graphics Artist, and AI Automation Specialist.</p>
+                    <p class="text-md text-gray-500 mt-2 max-w-2xl">Award-winning video creator with 8+ years of expertise. I bridge AI and creativity to design intelligent workflows and generative AI solutions that elevate content quality and drive growth.</p>
+                    
+                    <!-- Button to open the modal -->
+                    <button id="open-story-modal" class="mt-8 text-green-600 font-medium hover:text-green-700 transition-colors flex items-center justify-center">
+                        <span class="mr-2">Why hire me? My story.</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    
+                    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                        <!-- Download Resume Button -->
+                        <a href="https://drive.google.com/uc?export=download&id=1Qo0qmRRtvOg8fBgPv9yuBK5pHjNwefkQ" download="Sehal_Hussain_Resume.pdf" class="bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Download Resume
+                        </a>
+                        <!-- Updated Portfolio Link -->
+                        <a href="https://behance.net/sehalhussain2" class="bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105">View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 sm:py-24">
+            <div class="container">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
+                    <h2 class="section-title !mb-0">My Services</h2>
+                </div>
+                <!-- The grid container now has a simpler layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="card p-8 rounded-3xl fade-in-up flex flex-col">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <!-- Icon for AI Agents & N8n Automations -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.674M21 12a9 9 0 11-18 0 9 9 0 0118 0zM7.55 10l.738-1.782A1 1 0 019 7h6a1 1 0 01.712 1.218L16.45 10m-8.899 0h8.899M21 12a9 9 0 11-18 0 9 9 0 0118 0zM7.55 10l.738-1.782A1 1 0 019 7h6a1 1 0 01.712 1.218L16.45 10m-8.899 0h8.899"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">AI Agents & N8n Automations</h3>
+                            <p class="text-gray-600">I build AI-powered workflows with n8n to automate content scheduling, client communication, and asset management, saving you hours weekly.</p>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="card p-8 rounded-3xl fade-in-up flex flex-col">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <!-- Icon for Generative AI Solutions -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.586a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Generative AI Solutions</h3>
+                            <p class="text-gray-600">Leverage cutting-edge Generative AI tools like Runway, Sora, and Firefly to supercharge ideation, editing, and campaign execution for your brand.</p>
+                        </div>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="card p-8 rounded-3xl fade-in-up flex flex-col">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <!-- Icon for Automated Video Production -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Automated Video Production</h3>
+                            <p class="text-gray-600">Directly give a script and have a video of you talking in your voice, with your avatar. I automate the entire video production process from script to screen.</p>
+                        </div>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="card p-8 rounded-3xl fade-in-up flex flex-col">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <!-- Icon for Customer Engagement CRM with AI -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.676A9.95 9.95 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Customer Engagement CRM with AI</h3>
+                            <p class="text-gray-600">I set up the full CRM infrastructure where all communication from email, Instagram, Facebook, and WhatsApp comes into a single dashboard. AI is integrated to reply to most messages, so you only need to respond when required, saving you significant time and effort.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card 5 -->
+                     <div class="card p-8 rounded-3xl fade-in-up flex flex-col">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <!-- Icon for Video Editing & VFX -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Video Editing & VFX</h3>
+                            <p class="text-gray-600">Professional video editing and visual effects services to transform your raw footage into high-impact, polished content that captivates your audience.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card 6 -->
+                     <div class="card p-8 rounded-3xl fade-in-up flex flex-col">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <!-- Icon for Motion Graphics & Animation -->
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h2V5m-2 0h2m4 0v-2m-4 2h4m-4 2v10a2 2 0 002 2h4a2 2 0 002-2V7a2 2 0 00-2-2h-4z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-900">Motion Graphics & Animation</h3>
+                            <p class="text-gray-600">Engaging 2D and 3D motion graphics to bring your ideas to life. From explainer videos to dynamic logos, I create visuals that tell a story.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Featured Clients Section -->
+        <section id="clients" class="py-16 sm:py-24 bg-gray-50">
+            <div class="container text-center">
+                <h2 class="section-title mx-auto">Featured Clients</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center justify-center">
+                    <!-- Updated to use the uploaded image file name directly -->
+                    <img src="https://sarvar8950.github.io/internshala_clone.github.io/images/internshala_logo.png" alt="Internshala" class="w-full h-auto object-contain p-4 rounded-xl opacity-80 hover:opacity-100 transition-opacity">
+                    <img src="https://ugc.production.linktr.ee/82cf023d-86c0-4224-9377-32e58651cc99_HOS-Logo-copy.jpeg" alt="The House of Seya" class="w-full h-auto object-contain p-4 rounded-xl opacity-80 hover:opacity-100 transition-opacity">
+                    <!-- Placeholder using another uploaded image since the actual logo wasn't provided -->
+                    <img src="https://www.makemytees.com/images/logo-mmt.png" alt="Make My Tees" class="w-full h-auto object-contain p-4 rounded-xl opacity-80 hover:opacity-100 transition-opacity">
+                    <!-- Placeholder using another uploaded image since the actual logo wasn't provided -->
+                    <img src="https://www.cesc.co.in/images/rpsg-logo.png" alt="CESC" class="w-full h-auto object-contain p-4 rounded-xl opacity-80 hover:opacity-100 transition-opacity">
+                    <!-- Placeholder using another uploaded image since the actual logo wasn't provided -->
+                    <img src="https://www.boat-lifestyle.com/cdn/shop/files/boAt_logo_black_24889e30-925c-4185-a028-9fef497a8e44.svg?v=1732879339" alt="boat-lifestyle" class="w-full h-auto object-contain p-4 rounded-xl opacity-80 hover:opacity-100 transition-opacity">
+                    <img src="https://www.abed.com.au/img/logo.png" alt="Absolute Education" class="w-full h-auto object-contain p-4 rounded-xl opacity-80 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 sm:py-24">
+            <div class="container">
+                <h2 class="section-title mx-auto text-center">Recommendations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="card p-8 rounded-xl fade-in-up">
+                        <p class="text-lg text-gray-700 italic mb-4">"I am writing to recommend Sehal for any opportunity he may be pursuing. I have had the pleasure of working with Sehal for the past 4.5 years, and during this time, he has consistently impressed me with his exceptional skills, dedication, and professionalism.
+
+Sehal is a highly skilled animator and video editor. His expertise in video shooting and handling cameras is unmatched, and he has guided, advised, and inspired me with his work. His ability to create visually stunning and engaging content is truly remarkable. I remember when we were working on a particularly challenging project, and Sehal’s creativity and technical proficiency turned it into one of our most successful campaigns.
+
+One of Sehal’s most admirable qualities is his calm nature and approachable demeanor. No matter the pressure or tight deadlines, Sehal always remains composed and approachable, making him a fantastic leader and mentor. His amazing managing skills ensure that projects run smoothly and efficiently, fostering a collaborative and positive work environment.
+
+In summary, I highly recommend Sehal for any role or opportunity he is considering. His exceptional skills, calm nature, and strong leadership make him an invaluable asset to any team. Please feel free to contact me at 9910011717 if you have any questions or need further information.
+
+Sincerely,
+
+Mohit"</p>
+                        <p class="font-bold text-gray-900">- Mohit Chandila</p>
+                        <p class="text-sm text-gray-500">Sr. Video Designer, Internshala</p>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="card p-8 rounded-xl fade-in-up">
+                        <p class="text-lg text-gray-700 italic mb-4">"I had the pleasure of working closely with Sehal during his time with our video design team, and I am thrilled to recommend him. Sehal's contributions were pivotal in the development of our training materials, video ad campaigns, filmmaking projects, and a wide array of multi-genre video content, including YouTube videos.
+
+Sehal's ability to manage his team with finesse stood out. He consistently demonstrated exceptional leadership and organizational skills, ensuring every project was executed seamlessly and delivered on time. His humility is admirable; Sehal is always polite, positive, and approachable. His friendly personality and optimistic outlook made him a joy to work with.
+
+Sehal is a true asset to any team, and I do not doubt that he will continue to excel and inspire wherever he goes."</p>
+                        <p class="font-bold text-gray-900">- Sumit Periwal</p>
+                        <p class="text-sm text-gray-500">Chief Business Officer, Internshala</p>
+                    </div>
+                    <!-- Testimonial Card 3 (Placeholder) -->
+                    <div class="card p-8 rounded-xl fade-in-up">
+                        <p class="text-lg text-gray-700 italic mb-4">"I have collaborated with Sehal on various projects and have consistently observed his dedication and efficiency. He is highly dependable and works at an impressive pace. Sehal is a hard worker who doesn’t hesitate to put in extra hours to ensure project completion. His skills as a video maker are exceptional."</p>
+                        <p class="font-bold text-gray-900">- Shobha Saini</p>
+                        <p class="text-sm text-gray-500"> Lead HR, Internshala</p>
+                    </div>
+                    <!-- Testimonial Card 4 (Placeholder) -->
+                    <div class="card p-8 rounded-xl fade-in-up">
+                        <p class="text-lg text-gray-700 italic mb-4">"Sehal is a talented cinematographer and filmmaker. While reporting to me at Internshala, he successfully produced multiple projects and managed a large team across various video production segments. Beyond his technical expertise, Sehal is humble and highly trustworthy in project execution. I highly recommend him to anyone seeking a skilled professional or a reliable collaborator for their projects."</p>
+                        <p class="font-bold text-gray-900">- Arun Singh Panwar</p>
+                        <p class="text-sm text-gray-500">Art Director, Internshala</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career & Education Timeline --> 
+<section id="timeline" class="py-16 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">My Journey</h2>
+
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full border-l-4 border-green-600"></div>
+
+      <!-- Timeline items -->
+      <div class="space-y-12">
+
+        <!-- 2015 -->
+        <div class="timeline-item left opacity-0 transform transition duration-700 relative md:flex md:justify-between md:items-center">
+          <div class="md:w-1/2 md:pr-8 text-right md:text-right ml-auto">
+            <time class="mb-1 text-sm font-medium text-gray-500">2015</time>
+            <h3 class="text-lg font-semibold text-gray-900">Started Freelancing</h3>
+            <p class="text-gray-700">Began my independent journey in video production and motion design, helping creators and brands bring their stories to life.</p>
+          </div>
+          <div class="w-6 h-6 bg-green-600 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="timeline-item right opacity-0 transform transition duration-700 relative md:flex md:justify-between md:items-center">
+          <div class="md:w-1/2 md:pl-8 md:text-left mr-auto">
+            <time class="mb-1 text-sm font-medium text-gray-500">2018</time>
+            <h3 class="text-lg font-semibold text-gray-900">Joined Internshala</h3>
+            <p class="text-gray-700">Created 70+ e-learning videos, launched live shoots for Creative Writing training, and produced high-impact marketing campaigns.</p>
+          </div>
+          <div class="w-6 h-6 bg-green-600 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+        <!-- 2021 – 2024 -->
+        <div class="timeline-item left opacity-0 transform transition duration-700 relative md:flex md:justify-between md:items-center">
+          <div class="md:w-1/2 md:pr-8 md:text-right ml-auto">
+            <time class="mb-1 text-sm font-medium text-gray-500">2021 – 2024</time>
+            <h3 class="text-lg font-semibold text-gray-900">Sr. Video Content Developer at Internshala</h3>
+            <p class="text-gray-700">Directed end-to-end video production, led creative teams, cut turnaround times by 20%, and grew YouTube channels to 100k+ subscribers. During this period, began integrating AI and no-code workflows into creative processes to improve efficiency.</p>
+          </div>
+          <div class="w-6 h-6 bg-green-600 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+        <!-- 2024 – Present -->
+        <div class="timeline-item right opacity-0 transform transition duration-700 relative md:flex md:justify-between md:items-center">
+          <div class="md:w-1/2 md:pl-8 md:text-left mr-auto">
+            <time class="mb-1 text-sm font-medium text-gray-500">2024 – Present</time>
+            <h3 class="text-lg font-semibold text-gray-900">Content Creator & AI Automation Specialist</h3>
+            <p class="text-gray-700">Building AI-powered workflows and creative systems for brands like MakeMyTees, Inkludink, and House of Seya, merging storytelling with automation.</p>
+          </div>
+          <div class="w-6 h-6 bg-green-600 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-item left opacity-0 transform transition duration-700 relative md:flex md:justify-between md:items-center">
+          <div class="md:w-1/2 md:pr-8 md:text-right ml-auto">
+            <time class="mb-1 text-sm font-medium text-gray-500">Education</time>
+            <h3 class="text-lg font-semibold text-gray-900">B.Sc. (Hons.) in Media Science</h3>
+            <p class="text-gray-700">Specialisation in Film, Video & Television — ILEAD (Institute of Leadership, Entrepreneurship & Development), Kolkata.</p>
+          </div>
+          <div class="w-6 h-6 bg-green-600 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll animation script -->
+<script>
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0');
+        entry.target.style.transform = 'translateX(0)';
+      }
+    });
+  }, { threshold: 0.2 });
+
+  timelineItems.forEach(item => observer.observe(item));
+</script>
+
+<style>
+  .timeline-item.left {
+    transform: translateX(-50px);
+  }
+  .timeline-item.right {
+    transform: translateX(50px);
+  }
+</style>
+
+
+       <!-- Footer & Contact Section -->
+<section id="contact" class="py-16 sm:py-24 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+    <p class="text-lg text-gray-600 mb-8">Ready to elevate your content? I'm excited to discuss how my expertise can help your brand grow. Let's start a conversation.</p>
+
+    <!-- Contact Info -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-gray-700 font-medium mb-10">
+      <a href="mailto:sehalhussain@gmail.com" class="hover:text-green-600 transition-colors">sehalhussain@gmail.com</a>
+      <span class="hidden sm:block text-gray-400">|</span>
+      <a href="tel:+919831546373" class="hover:text-green-600 transition-colors">+91 98315 46373</a>
+    </div>
+
+    <!-- Social Media Buttons -->
+    <div class="flex justify-center gap-6">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/9831546373" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.54 0-10.04 4.5-10.04 10.05 0 1.77.46 3.42 1.25 4.86L2 22l5.37-1.41c1.39.76 2.98 1.17 4.67 1.17 5.54 0 10.04-4.5 10.04-10.05S17.58 2 12.04 2zm5.15 14.6c-.23.64-1.35 1.21-1.85 1.3-.48.09-1.05.12-2.09-.27-2.32-.78-3.82-2.56-4.42-3.42-.38-.52.38-.49.91-1.28.03-.04.03-.07.05-.11.06-.11.01-.2-.03-.28-.06-.08-1.1-2.65-1.51-3.6-.39-.92-.79-.8-1.08-.82-.28-.02-.6-.03-.92-.03-.31 0-.82.12-1.25.61-.43.49-1.66 1.63-1.66 3.97 0 2.34 1.7 4.6 1.94 4.91.23.32 3.35 5.12 8.16 5.12 4.8 0 5.31-3.18 5.9-4.43.6-1.25.6-2.32.42-2.54z"/></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/sehalhussain/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 text-white hover:bg-blue-800 transition-colors" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4.015-3.233-4.015 0v5.604h-3v-11h3v1.765c1.396-2.586 7.015-2.613 7.015 2.584v6.651z"/></svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/sehalhussain" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-600 transition-colors" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c2.193.102 3.25.795 3.922 1.468.675.677 1.373 1.734 1.474 3.922.058 1.267.07 1.647.07 4.85s-.012 3.584-.07 4.85c-.102 2.193-.795 3.25-1.468 3.922-.675.677-1.734 1.373-3.922 1.474-1.267.058-1.647.07-4.85.07s-3.584-.012-4.85-.07c-2.193-.102-3.25-.795-3.922-1.468-.675-.677-1.373-1.734-1.474-3.922-.058-1.267-.07-1.647-.07-4.85s.012-3.584.07-4.85c.102-2.193.795-3.25 1.468-3.922.677-.675 1.734-1.373 3.922-1.474 1.267-.058 1.647-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.071C3.251.25 2.215.932 1.49 1.655.765 2.379.083 3.415.026 4.695.01 5.975 0 6.383 0 9.642s.014 3.668.071 4.947c.057 1.28.739 2.316 1.463 3.04.724.725 1.76 1.407 3.04 1.464 1.28.057 1.688.07 4.947.07s3.668-.014 4.947-.071c1.28-.057 2.316-.739 3.04-1.463.725-.724 1.407-1.76 1.464-3.04.057-1.28.07-1.688.07-4.947s-.014-3.668-.071-4.947c-.057-1.28-.739-2.316-1.463-3.04C21.761.932 20.725.25 19.445.193c-1.28-.057-1.688-.07-4.947-.07zm0 5.483c-2.735 0-4.957 2.221-4.957 4.957s2.222 4.957 4.957 4.957 4.957-2.221 4.957-4.957S14.735 5.483 12 5.483zm0 8.163c-1.764 0-3.195-1.432-3.195-3.195s1.431-3.195 3.195-3.195 3.195 1.432 3.195 3.195S13.764 13.646 12 13.646zm6.657-6.417c-.504 0-.913.41-.913.913s.409.913.913.913.913-.41.913-.913-.409-.913-.913-.913z"/></svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/sehalhussain" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.79c0-2.508 1.493-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.454h-1.26c-1.248 0-1.657.77-1.657 1.571v1.905h2.775l-.444 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+    </div>
+
+    <!-- Footer Note -->
+    <p class="text-gray-400 text-sm mt-10">&copy; 2025 Sehal Hussain. All rights reserved.</p>
+  </div>
+</section>
+
+    </main>
+
+    <!-- My Story Modal -->
+    <!-- Modal -->
+  <div id="story-modal" class="story-modal-overlay">
+    <div class="story-modal-content rounded-xl">
+      <span class="close-button" id="close-story-modal">&times;</span>
+      <h3 class="text-2xl font-bold mb-4">My Story</h3>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        My journey started with a passion for <span class="font-semibold">storytelling through visuals</span>. Over the last 8+ years, I’ve worked as a Motion Graphics Artist and Content Creator, producing videos and campaigns for brands that wanted more than just aesthetics — they wanted <span class="text-green-600 font-semibold">impact</span>.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Along the way, I realized content alone isn’t enough — <span class="italic">systems and automation</span> are what scale creativity. That’s when I dove into <span class="font-semibold">AI automation and no-code solutions</span>. Today, I combine both worlds: crafting high-quality content <em>and</em> building smart AI-driven workflows that save time, reduce costs, and amplify results.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Whether it’s designing videos that capture attention, or setting up AI agents that handle repetitive tasks, my goal is the same: to help individuals and brands <span class="text-green-600 font-semibold">work smarter, create better, and grow faster</span>.
+      </p>
+    </div>
+    
+    <script>
+        const openStoryModalBtn = document.getElementById('open-story-modal');
+        const storyModal = document.getElementById('story-modal');
+        const closeStoryModalBtn = document.getElementById('close-story-modal');
+
+        openStoryModalBtn.addEventListener('click', () => {
+            storyModal.classList.add('open');
+        });
+
+        closeStoryModalBtn.addEventListener('click', () => {
+            storyModal.classList.remove('open');
+        });
+        
+        // Also close the modal if the user clicks the dark overlay
+        storyModal.addEventListener('click', (e) => {
+            if (e.target === storyModal) {
+                storyModal.classList.remove('open');
+            }
+        });
+
+        // Set the portfolio link
+        document.addEventListener('DOMContentLoaded', () => {
+            const portfolioLink = document.querySelector('a[href="#"][class*="View Portfolio"]');
+            if (portfolioLink) {
+                // Update this link with your actual portfolio URL
+                portfolioLink.href = "https://behance.net/sehalhussain2";
+            }
+
+            // IntersectionObserver for scroll animations
+            const cards = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    // Fix: Use entry.isIntersecting to check for visibility
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.2
+            });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
