@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+      <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #fafafa;
@@ -347,85 +347,100 @@
         </div>
 
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-                    <h2 class="section-title mx-auto">My Services</h2>
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
+            <h2 class="section-title mx-auto">My Services</h2>
+        </div>
+        <!-- The grid container now has a simpler layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Card 1 -->
+            <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
+                <div class="feature-icon text-4xl text-gray-400 mb-4">
+                    <!-- Icon for AI Agents & N8n Automations -->
+                    <i class="fas fa-robot"></i>
                 </div>
-                <!-- The grid container now has a simpler layout -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
-                        <div class="feature-icon text-4xl text-gray-400 mb-4">
-                            <!-- Icon for AI Agents & N8n Automations -->
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-900">AI Agents & N8n Automations</h3>
-                            <p class="text-gray-600">I build AI-powered workflows with n8n to automate content scheduling, client communication, and asset management, saving you hours weekly.</p>
-                        </div>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
-                        <div class="feature-icon text-4xl text-gray-400 mb-4">
-                            <!-- Icon for Generative AI Solutions -->
-                            <i class="fas fa-magic"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Generative AI Solutions</h3>
-                            <p class="text-gray-600">Leverage cutting-edge Generative AI tools like Runway, Sora, and Firefly to supercharge ideation, editing, and campaign execution for your brand.</p>
-                        </div>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
-                        <div class="feature-icon text-4xl text-gray-400 mb-4">
-                            <!-- Icon for Automated Video Production -->
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Automated Video Production</h3>
-                            <p class="text-gray-600">Directly give a script and have a video of you talking in your voice, with your avatar. I automate the entire video production process from script to screen.</p>
-                        </div>
-                    </div>
-                    <!-- Service Card 4 -->
-                    <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
-                        <div class="feature-icon text-4xl text-gray-400 mb-4">
-                            <!-- Icon for Customer Engagement CRM with AI -->
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Customer Engagement CRM with AI</h3>
-                            <p class="text-gray-600">I set up the full CRM infrastructure where all communication from email, Instagram, Facebook, and WhatsApp comes into a single dashboard. AI is integrated to reply to most messages, so you only need to respond when required, saving you significant time and effort.</p>
-                            <a href="crm.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors pulse">
-                                Learn more →
-                            </a>
-                        </div>
-                    </div>
-                     <!-- Service Card 5 -->
-                     <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
-                        <div class="feature-icon text-4xl text-gray-400 mb-4">
-                            <!-- Icon for Video Editing & VFX -->
-                            <i class="fas fa-cut"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Video Editing & VFX</h3>
-                            <p class="text-gray-600">Professional video editing and visual effects services to transform your raw footage into high-impact, polished content that captivates your audience.</p>
-                        </div>
-                    </div>
-                     <!-- Service Card 6 -->
-                     <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
-                        <div class="feature-icon text-4xl text-gray-400 mb-4">
-                            <!-- Icon for Motion Graphics & Animation -->
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-900">Motion Graphics & Animation</h3>
-                            <p class="text-gray-600">Engaging 2D and 3D motion graphics to bring your ideas to life. From explainer videos to dynamic logos, I create visuals that tell a story.</p>
-                        </div>
-                    </div>
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">AI Agents & N8n Automations</h3>
+                    <p class="text-gray-600 flex-grow">I build AI-powered workflows with n8n to automate content scheduling, client communication, and asset management, saving you hours weekly.</p>
+                    <a href="agents.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors">
+                        Learn more →
+                    </a>
                 </div>
             </div>
-        </section>
+            <!-- Service Card 2 -->
+            <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
+                <div class="feature-icon text-4xl text-gray-400 mb-4">
+                    <!-- Icon for Generative AI Solutions -->
+                    <i class="fas fa-magic"></i>
+                </div>
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Generative AI Solutions</h3>
+                    <p class="text-gray-600 flex-grow">Leverage cutting-edge Generative AI tools like Runway, Sora, and Firefly to supercharge ideation, editing, and campaign execution for your brand.</p>
+                <a href="agents.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors">
+                        Learn more →
+                    </a>
+                </div>
+            </div>
+            <!-- Service Card 3 -->
+            <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
+                <div class="feature-icon text-4xl text-gray-400 mb-4">
+                    <!-- Icon for Automated Video Production -->
+                    <i class="fas fa-video"></i>
+                </div>
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Automated Video Production</h3>
+                    <p class="text-gray-600 flex-grow">Directly give a script and have a video of you talking in your voice, with your avatar. I automate the entire video production process from script to screen.</p>
+                    <a href="agents.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors">
+                        Learn more →
+                    </a>
+                </div>
+            </div>
+            <!-- Service Card 4 -->
+            <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
+                <div class="feature-icon text-4xl text-gray-400 mb-4">
+                    <!-- Icon for Customer Engagement CRM with AI -->
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Customer Engagement CRM with AI</h3>
+                    <p class="text-gray-600 flex-grow">I set up the full CRM infrastructure where all communication from email, Instagram, Facebook, and WhatsApp comes into a single dashboard. AI is integrated to reply to most messages, so you only need to respond when required, saving you significant time and effort.</p>
+                    <a href="crm.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors">
+                        Learn more →
+                    </a>
+                </div>
+            </div>
+            <!-- Service Card 5 -->
+            <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
+                <div class="feature-icon text-4xl text-gray-400 mb-4">
+                    <!-- Icon for Video Editing & VFX -->
+                    <i class="fas fa-cut"></i>
+                </div>
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Video Editing & VFX</h3>
+                    <p class="text-gray-600 flex-grow">Professional video editing and visual effects services to transform your raw footage into high-impact, polished content that captivates your audience.</p>
+                    <a href="agents.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors">
+                        Learn more →
+                    </a>
+                </div>
+            </div>
+            <!-- Service Card 6 -->
+            <div class="feature-card p-8 rounded-2xl fade-in-up flex flex-col">
+                <div class="feature-icon text-4xl text-gray-400 mb-4">
+                    <!-- Icon for Motion Graphics & Animation -->
+                    <i class="fas fa-film"></i>
+                </div>
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Motion Graphics & Animation</h3>
+                    <p class="text-gray-600 flex-grow">Engaging 2D and 3D motion graphics to bring your ideas to life. From explainer videos to dynamic logos, I create visuals that tell a story.</p>
+                    <a href="agents.html" class="mt-4 inline-block text-green-600 font-medium hover:text-green-700 transition-colors">
+                        Learn more →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Updated Featured Clients Section (Removed Gradient) -->
         <section id="clients" class="py-20">
@@ -463,7 +478,7 @@
                 <div class="feature-card p-8 rounded-2xl fade-in-up">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p class="testimonial-text text-lg text-gray-700 italic mb-4">"I am writing to recommend Sehal for any opportunity he may be pursuing. I have had the pleasure of working with Sehal for the past 4.5 years, and during this time, he has consistently impressed me with his exceptional skills, dedication, and professionalism.
+                            <p class="testimonial-text text-lg text-gray-700 mb-4">"I am writing to recommend Sehal for any opportunity he may be pursuing. I have had the pleasure of working with Sehal for the past 4.5 years, and during this time, he has consistently impressed me with his exceptional skills, dedication, and professionalism.
 
 Sehal is a highly skilled animator and video editor. His expertise in video shooting and handling cameras is unmatched, and he has guided, advised, and inspired me with his work. His ability to create visually stunning and engaging content is truly remarkable. I remember when we were working on a particularly challenging project, and Sehal's creativity and technical proficiency turned it into one of our most successful campaigns.
 
@@ -487,7 +502,7 @@ Mohit"</p>
                 <div class="feature-card p-8 rounded-2xl fade-in-up">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p class="testimonial-text text-lg text-gray-700 italic mb-4">"I had the pleasure of working closely with Sehal during his time with our video design team, and I am thrilled to recommend him. Sehal's contributions were pivotal in the development of our training materials, video ad campaigns, filmmaking projects, and a wide array of multi-genre video content, including YouTube videos.
+                            <p class="testimonial-text text-lg text-gray-700 mb-4">"I had the pleasure of working closely with Sehal during his time with our video design team, and I am thrilled to recommend him. Sehal's contributions were pivotal in the development of our training materials, video ad campaigns, filmmaking projects, and a wide array of multi-genre video content, including YouTube videos.
 
 Sehal's ability to manage his team with finesse stood out. He consistently demonstrated exceptional leadership and organizational skills, ensuring every project was executed seamlessly and delivered on time. His humility is admirable; Sehal is always polite, positive, and approachable. His friendly personality and optimistic outlook made him a joy to work with.
 
@@ -505,7 +520,7 @@ Sehal is a true asset to any team, and I do not doubt that he will continue to e
                 <div class="feature-card p-8 rounded-2xl fade-in-up">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p class="testimonial-text text-lg text-gray-700 italic mb-4">"I have collaborated with Sehal on various projects and have consistently observed his dedication and efficiency. He is highly dependable and works at an impressive pace. Sehal is a hard worker who doesn't hesitate to put in extra hours to ensure project completion. His skills as a video maker are exceptional."</p>
+                            <p class="testimonial-text text-lg text-gray-700 mb-4">"I have collaborated with Sehal on various projects and have consistently observed his dedication and efficiency. He is highly dependable and works at an impressive pace. Sehal is a hard worker who doesn't hesitate to put in extra hours to ensure project completion. His skills as a video maker are exceptional."</p>
                             <button class="read-more-btn">Read More</button>
                         </div>
                         <div>
@@ -519,7 +534,7 @@ Sehal is a true asset to any team, and I do not doubt that he will continue to e
                 <div class="feature-card p-8 rounded-2xl fade-in-up">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p class="testimonial-text text-lg text-gray-700 italic mb-4">"Sehal is a talented cinematographer and filmmaker. While reporting to me at Internshala, he successfully produced multiple projects and managed a large team across various video production segments. Beyond his technical expertise, Sehal is humble and highly trustworthy in project execution. I highly recommend him to anyone seeking a skilled professional or a reliable collaborator for their projects."</p>
+                            <p class="testimonial-text text-lg text-gray-700 mb-4">"Sehal is a talented cinematographer and filmmaker. While reporting to me at Internshala, he successfully produced multiple projects and managed a large team across various video production segments. Beyond his technical expertise, Sehal is humble and highly trustworthy in project execution. I highly recommend him to anyone seeking a skilled professional or a reliable collaborator for their projects."</p>
                             <button class="read-more-btn">Read More</button>
                         </div>
                         <div>
@@ -612,22 +627,27 @@ Sehal is a true asset to any team, and I do not doubt that he will continue to e
                 <div class="flex justify-center items-center gap-6">
                     <!-- WhatsApp -->
                     <a href="https://wa.me/1234567890" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-green-600 hover:bg-green-50 transition-colors" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp w-6 h-6"></i>
+                        <i class="fa-brands fa-whatsapp text-3xl" style="color: #15803d;"></i>
                     </a>
 
                     <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/sehalhussain/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-blue-700 hover:bg-blue-50 transition-colors" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in w-6 h-6"></i> 
+                        <i class="fa-brands fa-linkedin text-3xl" style="color: #15803d;"></i>
                     </a>
 
                     <!-- Instagram -->
                     <a href="https://www.instagram.com/sehalhussain" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-pink-500 hover:bg-pink-50 transition-colors" aria-label="Instagram">
-                        <i class="fab fa-instagram w-6 h-6"></i>
+                        <i class="fa-brands fa-instagram text-3xl" style="color: #15803d;"></i>
                     </a>
 
                     <!-- Facebook -->
                     <a href="https://www.facebook.com/sehalhussain" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-blue-600 hover:bg-blue-50 transition-colors" aria-label="Facebook">
-                        <i class="fab fa-facebook-f w-6 h-6"></i>
+                        <i class="fa-brands fa-facebook text-3xl" style="color: #15803d;"></i>
+                    </a>
+
+                    <!-- Behance -->
+                    <a href="https://behance.net/sehalhussain2" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-blue-600 hover:bg-blue-50 transition-colors" aria-label="Behance">
+                        <i class="fa-brands fa-behance text-3xl"style="color: #15803d;" ></i>
                     </a>
                 </div>
         </section>
