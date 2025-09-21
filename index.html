@@ -645,6 +645,24 @@ Sehal is a true asset to any team, and I do not doubt that he will continue to e
                     </a>
                 </div>
         </section>
+
+        <script>
+  window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"Chat with us"};
+  (function(d,t) {
+    var BASE_URL="https://chatwoot.sehalvps.duckdns.org";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'LSBkfTVWpWFa8fi1r8N2yzy3',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
+
          <!-- Footer -->
   <footer class="bg-white border py-6">
     <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
@@ -763,6 +781,7 @@ Sehal is a true asset to any team, and I do not doubt that he will continue to e
     </script>
 </body>
 </html>
+
 
 
 
