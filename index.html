@@ -303,6 +303,22 @@
         </div>
     </header>
 
+    <script>
+  (function(d,t) {
+    var BASE_URL="https://chatwoot.sehalvps.duckdns.org";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'J5KWSpBkQ9vxwsAcX55WC8NX',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
+
     <main>
         <!-- Updated Hero Section with Gradient -->
         <div class="hero-gradient min-h-screen flex flex-col justify-center items-center py-16 text-center">
@@ -761,23 +777,9 @@ Sehal is a true asset to any team, and I do not doubt that he will continue to e
             });
         });
     </script>
-          <script>
-  (function(d,t) {
-    var BASE_URL="https://chatwoot.sehalvps.duckdns.org";
-    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=BASE_URL+"/packs/js/sdk.js";
-    g.async = true;
-    s.parentNode.insertBefore(g,s);
-    g.onload=function(){
-      window.chatwootSDK.run({
-        websiteToken: 'QUNjW7dX8MwGuvxAj9NG4vLN',
-        baseUrl: BASE_URL
-      })
-    }
-  })(document,"script");
-</script>
 </body>
 </html>
+
 
 
 
